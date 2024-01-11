@@ -13,7 +13,9 @@ Clone the repository and give execution permissions to the script:
 git clone [URL of your repository]
 chmod +x commit
 ```
-For global usage you can install it in /usr/local/bin/commit
+For global usage you can install it 
+### Ubuntu, CentOS, macOS
+in /usr/local/bin/commit
 ## Usage
 ```
 commit "Your commit message here"
