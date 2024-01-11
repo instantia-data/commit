@@ -1,0 +1,24 @@
+#!/bin/bash
+
+git config --global credential.helper 'cache --timeout=1800'
+
+# Check if commit message was provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <commit-message>"
+    exit 1
+fi
+
+# Get the current date and time in Y-m-d H:i:s format
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
+
+# Combine timestamp with the provided commit message
+# Note the newline character '\n' after the timestamp
+COMMIT_MESSAGE="$TIMESTAMP\n\n$1"
+
+# Execute Git commands
+git pull
+git add .
+git commit -m "$COMMIT_MESSAGE"
+git push
+
+echo "Changes pushed to repository."
