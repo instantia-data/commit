@@ -19,6 +19,15 @@ COMMIT_MESSAGE="$TIMESTAMP\n\n$1"
 git pull
 git add .
 git commit -m "$COMMIT_MESSAGE"
-git push
 
-echo "Changes pushed to repository."
+# Ask user if they want to proceed with git push
+read -p "Do you want to push the commit? (y/n) " -n 1 -r
+echo    # move to a new line
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    git push
+    echo "Changes pushed to repository."
+else
+    echo "Push cancelled."
+fi
