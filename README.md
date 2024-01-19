@@ -25,9 +25,13 @@ The script will prompt if you want to push the changes to repository
 Adds a timestamp to the commit message.
 
 Simplifies the commit process with a single command:
+
 git pull
+
 git add .
+
 git commit -m "the changes"
+
 and prompt for push
 
 ## Contributions
