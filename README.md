@@ -20,11 +20,19 @@ in /usr/local/bin/commit
 ```
 commit "Your commit message here"
 ```
+The script will prompt if you want to push the changes to repository
 ## Features
 Adds a timestamp to the commit message.
-Simplifies the commit process with a single command.
-Contributions
-Contributions are welcome. To contribute, fork the project, create a feature branch, and submit a pull request.
+
+Simplifies the commit process with a single command:
+git pull
+git add .
+git commit -m "the changes"
+and prompt for push
+
+## Contributions
+Contributions are welcome. 
+To contribute, fork the project, create a feature branch, and submit a pull request.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
