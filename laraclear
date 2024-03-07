@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Check if the current directory is a Laravel project
+if [ ! -f artisan ]; then
+    echo "This doesn't seem to be a Laravel project directory."
+    exit 1
+fi
+
+# Set file permissions and ownership
+echo "Setting permissions and ownership..."
+sudo chmod -R 775 storage/
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
+sudo chmod 0777 storage/logs/*
+
+# Run Laravel specific commands
+echo "Clearing Laravel caches..."
+php artisan view:clear
+sudo php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan queue:clear
+php artisan event:clear
+php artisan debugbar:clear
+php artisan optimize:clear
+
+# Clear laravel.log file if it exists
+echo "Clearing laravel.log file..."
+if [ -f storage/logs/laravel.log ]; then
+    truncate -s 0 storage/logs/laravel.log
+    echo "laravel.log has been cleared."
+else
+    echo "laravel.log does not exist, no need to clear."
+fi
+
+echo "Project clean complete."
