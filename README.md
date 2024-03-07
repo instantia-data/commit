@@ -79,6 +79,30 @@ git fetch --all
 
 git reset --hard origin/<branch-name>
 
+## Installation for laraclear
+Performs clear operations in Laravel projects local installed
+```
+git clone [URL of your repository]
+chmod +x laraclear
+```
+For global usage you can install it 
+### Ubuntu, CentOS, macOS
+in /usr/local/bin/laraclear
+### Usage
+```
+laraclear
+```
+### Features
+Performs clear operations in Laravel projects:
+php artisan view:clear
+sudo php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan queue:clear
+php artisan event:clear
+php artisan debugbar:clear
+php artisan optimize:clear
+
 ## Contributions
 Contributions are welcome. 
 To contribute, fork the project, create a feature branch, and submit a pull request.
