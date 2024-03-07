@@ -34,6 +34,29 @@ git commit -m "the changes"
 
 and prompt for push
 
+## Installation for gitdir
+Clone the repository and give execution permissions to the script:
+```
+git clone [URL of your repository]
+chmod +x gitdir
+```
+For global usage you can install it 
+### Ubuntu, CentOS, macOS
+in /usr/local/bin/gitdir
+### Usage
+Inside a folder to iterate all direct child folders
+```
+gitdir
+```
+### Features
+Iterate all direct child folders, check if is a git repository and perform:
+
+- git pull
+- git status
+- prompt for commit if necessary
+- prompt for push
+
+
 ## Installation for reset-git
 Get the git status and ask for a hard reset:
 ```
