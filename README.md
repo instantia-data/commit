@@ -103,6 +103,22 @@ php artisan event:clear
 php artisan debugbar:clear
 php artisan optimize:clear
 
+## Installation for gitclear
+Clear all .git folders recursively in a folder
+```
+git clone [URL of your repository]
+chmod +x gitclear
+```
+For global usage you can install it 
+### Ubuntu, CentOS, macOS
+in /usr/local/bin/gitclear
+### Usage
+```
+gitclear
+```
+### Features
+Remove the git reposiories inside a folder
+
 ## Contributions
 Contributions are welcome. 
 To contribute, fork the project, create a feature branch, and submit a pull request.
