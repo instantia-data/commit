@@ -33,4 +33,16 @@ else
     echo "laravel.log does not exist, no need to clear."
 fi
 
+# Give access to all .sqlite files in database/database/
+echo "Giving access to sqlite files..."
+if ls database/database/*.sqlite 1> /dev/null 2>&1; then
+    for sqlite_file in database/database/*.sqlite; do
+        sudo chmod 775 "$sqlite_file"
+        sudo chgrp www-data "$sqlite_file"
+        echo "$sqlite_file has now access."
+    done
+else
+    echo "No .sqlite files found in database/database/, no need to give access."
+fi
+
 echo "Project clean complete."
