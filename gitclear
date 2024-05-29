@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Function to clear .git directory
+clear_git_directory() {
+  local dir=$1
+  echo "Clearing .git directory in: $dir"
+  rm -rf "${dir}/.git"
+  if [ $? -eq 0 ]; then
+    echo "Cleared .git directory in: $dir"
+  else
+    echo "Failed to clear .git directory in: $dir"
+  fi
+}
+
+# Main script
+# Get the current directory
+SCAN_DIR=$(pwd)
+
+# Find and clear all .git directories
+find "$SCAN_DIR" -type d -name ".git" | while read -r git_dir; do
+  clear_git_directory "$(dirname "$git_dir")"
+done
+
+echo "Done!"
